@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="mr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> | Star News</title>
+    <title>Driving School</title>
     
-    <meta name="description" content="सत्यमेव जयते..">
-    <link rel="icon" type="image/x-icon" href="https://news.bizc.in/assets/news_3287818.png">
-    <meta name="theme-color" content="#cc0000">
+    <meta name="description" content="Best Car Driving School &amp; Training Center.">
+    <link rel="icon" type="image/x-icon" href="">
+    <meta name="theme-color" content="#f39c12">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700;800&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&amp;family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="manifest" href="manifest.json">
     <meta name="mobile-web-app-capable" content="yes">
@@ -22,501 +23,258 @@
     <style>
          
         :root {
-            --primary: #cc0000;    
-            --dark-red: #990000;
-            --blue: #003366;       
-            --dark: #1a1a1a;       
-            --gray: #f4f4f4;       
+            --primary: #f39c12;     
+            --primary-dark: #d35400;
+            --secondary: #2c3e50;   
+            --dark: #1a1a1a;
+            --gray: #f8f9fa;
             --white: #ffffff;
-            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        html {
+            scroll-behavior: smooth;  
         }
 
         body {
-            font-family: 'Mukta', 'Roboto', sans-serif;  
-            margin: 0;
-            padding: 0;
-            background-color: var(--gray);
+            font-family: 'Poppins', 'Mukta', sans-serif;
+            margin: 0; padding: 0;
+            background-color: var(--white);
             color: var(--dark);
             line-height: 1.6;
-            overscroll-behavior-y: none;
         }
 
         a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; padding: 0; margin: 0; }
         img { max-width: 100%; height: auto; }
+        ul { list-style: none; padding: 0; margin: 0; }
+
+         
+        section {
+            scroll-margin-top: 110px;  
+        }
 
          
         .top-bar {
-            background: var(--dark);
-            color: #ccc;
-            padding: 5px 5%;
-            font-size: 13px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #333;
+            background: var(--secondary);
+            color: #ecf0f1; padding: 5px 5%; font-size: 12px;
+            display: flex; justify-content: flex-end;  
+            align-items: center; border-bottom: 2px solid var(--primary);
         }
         
          
-        .goog-te-banner-frame { display: none !important; }
-        body { top: 0px !important; }
-        .goog-te-gadget-simple { background: transparent !important; border: none !important; padding: 0 !important; font-size: 12px !important; color: #ccc !important; }
-        .goog-te-gadget-simple a { color: #fff !important; text-decoration: none !important; font-weight: bold; }
-        .goog-te-gadget-icon { display: none !important; }
+        .goog-te-banner-frame { display: none !important; } body { top: 0px !important; }
+        .goog-te-gadget-simple { background: transparent !important; border: none !important; padding: 0 !important; font-size: 12px !important; }
+        .goog-te-gadget-simple a { color: #fff !important; text-decoration: none !important; font-weight: 600; }
+        .goog-te-gadget-icon, img.goog-te-gadget-icon { display: none !important; }
+        .goog-te-menu-value span { color: white !important; }
 
+         
         .header-main {
-            background: var(--white);
-            padding: 15px 5%;
-            display: flex;
-            align-items: center;
-            border-bottom: 4px solid var(--primary);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: relative;
+            background: var(--white); padding: 15px 5%; display: flex; align-items: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000;
         }
-
-        .logo { width: 90px; margin-right: 20px; object-fit: contain; }
-
-        .site-title h1 {
-            margin: 0;
-            font-size: 32px;
-            color: var(--primary);
-            text-transform: uppercase;
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -0.5px;
-        }
-
-        .site-title p {
-            margin: 2px 0 0;
-            font-size: 14px;
-            color: #555;
-            font-weight: 600;
-        }
-
-         
-        .nav-wrapper {
-            background: var(--blue);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .nav {
-            display: flex;
-            justify-content: center;  
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .nav a {
-            color: var(--white);
-            padding: 12px 20px;
-            font-weight: 700;
-            font-size: 16px;
-            display: block;
-            border-bottom: 3px solid transparent;
-            text-transform: uppercase;
-        }
-
-        .nav a:hover, .nav a.active {
-            background-color: rgba(255,255,255,0.1);
-            border-bottom: 3px solid var(--primary);
-        }
-
-         
-        .menu-toggle-btn {
-            display: none;
-            background: none; border: none; color: white;
-            font-size: 24px; cursor: pointer; padding: 10px;
-        }
-        .mobile-header-flex { display: none; }
-
-         
-        .container {
-            max-width: 1100px;
-            margin: 20px auto;
-            padding: 20px;
-            min-height: 60vh;
-        }
-
-         
-        .section-title {
-            color: var(--blue);
-            border-bottom: 3px solid var(--primary);
-            padding-bottom: 8px;
-            margin: 30px 0 20px;
-            font-size: 24px;
-            font-weight: 800;
-        }
+        .logo { width: 60px; margin-right: 15px; object-fit: contain; }
+        .site-title h1 { margin: 0; font-size: 24px; color: var(--secondary); text-transform: uppercase; font-weight: 800; line-height: 1.1; }
+        .site-title h1 span { color: var(--primary); }
+        .site-title p { margin: 2px 0 0; font-size: 12px; color: #7f8c8d; font-weight: 500; letter-spacing: 1px; }
         
          
-        .breaking-news {
-            background: #222; color: white; display: flex; align-items: center;
-            font-size: 14px; font-weight: bold; overflow: hidden;
-            border-bottom: 1px solid #444;
-        }
-        .bn-label { background: var(--primary); padding: 8px 15px; text-transform: uppercase; white-space: nowrap; z-index: 2; }
-        .bn-content { padding: 8px; white-space: nowrap; animation: ticker 20s linear infinite; }
-        @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        .header-cta { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+        .cta-box { text-align: right; }
+        .cta-box span { display: block; font-size: 11px; color: #888; text-transform: uppercase; }
+        .cta-box strong { display: block; font-size: 16px; color: var(--secondary); font-weight: 700; }
+        .cta-icon-link { font-size: 28px; color: var(--primary); display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: #fff4e6; border-radius: 50%; transition: 0.3s; }
+        .cta-icon-link:hover { background: var(--primary); color: white; transform: scale(1.1); }
 
          
-        .footer {
-            background: #111;
-            color: #bbb;
-            padding: 40px 20px 10px;
-            margin-top: 40px;
-            border-top: 5px solid var(--primary);
-        }
-        .footer h3 { color: white; border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block; margin-bottom: 20px; }
-        .footer a { color: #ddd; display: block; margin-bottom: 8px; font-size: 14px; }
+        .nav-wrapper { background: var(--secondary); position: sticky; top: 78px;   z-index: 999; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .nav { display: flex; justify-content: center; max-width: 1200px; margin: 0 auto; padding: 0; }
+        .nav a { color: rgba(255,255,255,0.8); padding: 12px 20px; font-weight: 600; font-size: 14px; display: block; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 3px solid transparent; transition: 0.3s; }
+        .nav a:hover { color: var(--primary); background: rgba(0,0,0,0.1); }
+        
+         
+        .mobile-menu-header { display: none; background: var(--secondary); padding: 10px 15px; align-items: center; justify-content: space-between; color: white; }
+        .menu-toggle-btn { background: none; border: none; color: var(--primary); font-size: 24px; cursor: pointer; }
+
+         
+         
+        
+        .footer { background: var(--secondary); color: #bdc3c7; padding: 50px 5% 20px; border-top: 5px solid var(--primary); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .footer h3 { color: white; margin-bottom: 20px; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; }
+        .footer h3 i { color: var(--primary); margin-right: 8px; }
+        .footer a { color: #bdc3c7; display: block; margin-bottom: 12px; font-size: 14px; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
         .footer a:hover { color: var(--primary); padding-left: 5px; }
-        .footer-bottom { border-top: 1px solid #333; margin-top: 30px; padding-top: 15px; text-align: center; font-size: 13px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px; text-align: center; font-size: 13px; }
 
          
-        @media (max-width: 1024px) {
-            .nav-wrapper { padding: 0 15px; display: flex; align-items: center; justify-content: space-between; }
-            .mobile-header-flex { display: flex; align-items: center; width: 100%; justify-content: space-between; }
-            .menu-toggle-btn { display: block; }
-            .menu-label { color: white; font-weight: bold; font-size: 18px; }
+        @media (max-width: 768px) {
+            .header-main { flex-wrap: wrap; padding: 10px 5%; position: relative; top: 0; }
+            .logo { width: 50px; }
+            .site-title h1 { font-size: 20px; }
+            .site-title p { display: none; }
+            .header-cta { position: absolute; top: 15px; right: 5%; }
+            .cta-box { display: none; }  
 
-            .nav {
-                display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%;
-                background: var(--blue); border-top: 1px solid rgba(255,255,255,0.1);
-            }
+            .nav-wrapper { position: relative; top: 0; }
+            .mobile-menu-header { display: flex; }
+            .nav { display: none; flex-direction: column; background: var(--secondary); width: 100%; }
             .nav.show-menu { display: flex; }
-            .nav a { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 15px; }
+            .nav a { border-bottom: 1px solid rgba(255,255,255,0.05); padding: 15px; }
             
-            .header-main { flex-direction: column; text-align: center; padding: 15px; }
-            .logo { margin: 0 0 10px 0; width: 80px; }
-            .site-title h1 { font-size: 26px; }
+            section { scroll-margin-top: 60px; }  
         }
-
-         
-        .app-bar {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 56px;
-            background: var(--primary); color: white; z-index: 9999;
-            align-items: center; justify-content: space-between; padding: 0 15px; box-sizing: border-box;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-        .app-title { font-size: 18px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .app-btn { background: none; border: none; color: white; font-size: 20px; cursor: pointer; padding: 5px; }
-
-         
-        .side-drawer-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; }
-        .side-drawer {
-            position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background: white; z-index: 10001;
-            transition: left 0.3s ease; box-shadow: 2px 0 10px rgba(0,0,0,0.1); display: flex; flex-direction: column;
-        }
-        .drawer-header { background: var(--primary); padding: 25px 20px; color: white; }
-        .drawer-header h2 { margin: 0; font-size: 20px; }
-        .drawer-links { padding: 10px 0; overflow-y: auto; flex: 1; }
-        .drawer-item { display: flex; align-items: center; gap: 15px; padding: 12px 20px; color: #333; font-weight: 500; border-bottom: 1px solid #eee; }
-        .drawer-item i { width: 25px; color: var(--primary); text-align: center; }
-        .drawer-item:hover { background: #fff5f5; color: var(--primary); }
-
-         
-        @media all and (display-mode: standalone) {
-            .top-bar, .header-main, .nav-wrapper, .footer { display: none !important; }
-            .app-bar { display: flex !important; }
-            .container { margin-top: 60px !important; padding: 10px !important; }
-            body { background: white; }
-        }
-
-         
-        #app-loader {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 20000;
-            display: none; flex-direction: column; align-items: center; justify-content: center;
-        }
-        .spinner {
-            border: 4px solid #f3f3f3; border-top: 4px solid var(--primary); border-radius: 50%; width: 40px; height: 40px; animation: spin 0.8s linear infinite;
-        }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
     </style>
 </head>
 <body>
 
-    <div class="app-bar">
-        <button class="app-btn" onclick="goBack()"><i class="fas fa-arrow-left"></i></button>
-        <div class="app-title">Star News</div>
-        <button class="app-btn" onclick="toggleDrawer()"><i class="fas fa-bars"></i></button>
-    </div>
-
-    <div class="side-drawer-overlay" onclick="closeDrawer()"></div>
-    <div class="side-drawer" id="appDrawer">
-        <div class="drawer-header">
-            <h2><i class="fas fa-newspaper"></i> मेनू</h2>
-            <div style="font-size:12px; opacity:0.8;">News Portal App</div>
-        </div>
-        <div class="drawer-links">
-            <a href="index.html" class="drawer-item"><i class="fas fa-home"></i> मुख्यपृष्ठ (Home)</a>
-            <a href="about.html" class="drawer-item"><i class="fas fa-info-circle"></i> आमच्याबद्दल</a>
-            <a href="contact.html" class="drawer-item"><i class="fas fa-phone"></i> संपर्क</a>
-            <a href="terms.html" class="drawer-item"><i class="fas fa-file-contract"></i> नियम व अटी</a>
-            <a href="privacy.html" class="drawer-item"><i class="fas fa-user-shield"></i> प्रायव्हसी पॉलिसी</a>
-            <hr>
-            <a href="#" onclick="window.location.reload()" class="drawer-item"><i class="fas fa-sync"></i> रिफ्रेश करा</a>
-        </div>
-    </div>
-
-    <div id="app-loader">
-        <div class="spinner"></div>
-        <p style="margin-top:15px; color:#555; font-size:14px;">Loading News...</p>
-    </div>
-
     <div class="top-bar">
-        <div><i class="far fa-calendar-alt"></i> <span id="currentDate"></span></div>
-        <div style="display:flex; align-items:center; gap:15px;">
-             <div id="google_translate_element"></div>
-             
-             <a href="#" style="color:#ccc;"><i class="fab fa-facebook"></i></a>
-             <a href="#" style="color:#ccc;"><i class="fab fa-whatsapp"></i></a>
-        </div>
+        <div id="google_translate_element"></div>
     </div>
 
     <header class="header-main">
-                     <img src="https://news.bizc.in/assets/news_3287818.png" alt="Logo" class="logo">
-                <div class="site-title">
-            <h1>Star News</h1>
-            <p>सत्यमेव जयते..</p>
+                     <i class="fas fa-car" style="font-size:35px; color:var(--primary); margin-right:15px;"></i>
+                
+        <div class="site-title">
+            <h1>DRIVING &lt;span&gt;SCHOOL&lt;/span&gt;</h1>
+            <p>Drive Safe, Drive Confident</p>
+        </div>
+
+        <div class="header-cta">
+            <div class="cta-box">
+                <span>Call For Admission</span>
+                <strong>&#43;91 9890XX XXXX</strong>
+            </div>
+                                    <a href="#contact" class="cta-icon-link">
+                <i class="fas fa-phone-alt"></i>
+            </a>
         </div>
     </header>
 
     <div class="nav-wrapper">
-        <div class="mobile-header-flex">
-            <span class="menu-label" style="padding-left:15px;">MENU</span>
-            <button class="menu-toggle-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+        <div class="mobile-menu-header">
+            <span style="font-weight:600; letter-spacing:1px;"><i class="fas fa-bars" style="margin-right:8px;"></i> MENU</span>
+            <button class="menu-toggle-btn" onclick="toggleMenu()"><i class="fas fa-chevron-down"></i></button>
         </div>
         <nav class="nav" id="mainNavbar">
-            <a href="index.html" class="active">Home</a>
-            <a href="about.html" class="">About Us</a>
-            <a href="contact.html" class="">Contact</a>
-            <a href="terms.html" class="">Terms</a>
-            <a href="privacy.html" class="">Privacy</a>
+            <a href="#home" onclick="closeMenu()">Home</a>
+            <a href="#about" onclick="closeMenu()">About Us</a>
+            <a href="#courses" onclick="closeMenu()">Courses & Fees</a>
+            <a href="#contact" onclick="closeMenu()">Contact</a>
         </nav>
     </div>
 
-    <main class="container">
-        <div id="dynamicNewsContainer" style="max-width:1000px; margin:0 auto; padding:10px; min-height:300px;">
-          <div style="text-align:center; padding:50px;"><i class="fas fa-circle-notch fa-spin"></i> Loading News...</div>
-      </div>
-      <div class="pagination-wrapper" style="text-align:center; margin:30px 0; padding-bottom:30px;">
-          <button id="btnPrev" onclick="changePage(-1)" class="page-btn" disabled>« Previous</button>
-          <span id="pageInfo" style="margin:0 15px; font-weight:bold; color:#555;">Page 1</span>
-          <button id="btnNext" onclick="changePage(1)" class="page-btn">Next »</button>
-      </div>
-      <style>
-          .news-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.08); margin-bottom: 25px; border: 1px solid #eee; animation: fadeIn 0.5s; }
-          .news-thumb img { width: 100%; height: auto; max-height: 400px; object-fit: cover; display: block; }
-          .news-body { padding: 20px; }
-          .news-meta { font-size: 12px; color: #888; margin-bottom: 8px; font-weight: bold; }
-          .news-title { margin: 0 0 10px 0; color: #cc0000; font-size: 22px; line-height: 1.3; }
-          .news-desc { font-size: 16px; color: #333; line-height: 1.6; margin-bottom: 15px; }
-          .read-more-btn { background: #000080; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-size: 14px; margin-bottom:10px; }
-          .news-links-box { margin-top: 10px; padding-top: 10px; border-top: 1px dashed #ddd; }
-          .btn-news-link { display: inline-block; background: #f8f9fa; color: #007bff; padding: 6px 12px; border: 1px solid #dee2e6; border-radius: 20px; text-decoration: none; font-size: 13px; margin-right: 5px; margin-bottom: 5px; font-weight: bold; }
-          
-           
-          .page-btn { background: #cc0000; color: white; border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: bold; transition:0.3s; }
-          .page-btn:disabled { background: #ccc; cursor: not-allowed; }
-          .page-btn:hover:not(:disabled) { background: #990000; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-          
-          @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-          @media (min-width: 768px) {
-              .news-card { display: flex; align-items: flex-start; }
-              .news-thumb { width: 40%; flex-shrink: 0; }
-              .news-thumb img { height: 100%; min-height: 250px; }
-              .news-body { width: 60%; }
-          }
-      </style>
-        <script>
-            var allNewsData = [{"title":"गावातील मुख्य रस्त्याचे डांबरीकरण पूर्ण; ग्रामस्थांकडून समाधान व्यक्त","desc":"गेल्या अनेक वर्षांपासून प्रलंबित असलेल्या गावातील मुख्य रस्त्याचे डांबरीकरण अखेर पूर्ण झाले आहे. ग्रामपंचायतीच्या विशेष निधीतून हे काम हाती घेण्यात आले होते.\n\nया रस्त्यामुळे आता वाहतूक सुरळीत होणार असून, पावसाळ्यात होणारा चिखलाचा त्रास कमी होणार आहे. सरपंच आणि ग्रामसेवकांच्या हस्ते या रस्त्याचे उद्घाटन करण्यात आले. यावेळी गावातील ज्येष्ठ नागरिक आणि तरुण मोठ्या संख्येने उपस्थित होते. \"आम्ही अनेक वर्षे या दिवसाची वाट पाहत होतो,\" अशी प्रतिक्रिया एका ग्रामस्थाने दिली. पुढील टप्प्यात गावातील अंतर्गत रस्ते सिमेंट काँक्रीटचे करण्याचे नियोजन असल्याचे सरपंचांनी सांगितले.`","images":["https://news.bizc.in/assets/news_3272905.png"],"links":[],"date":"12/22/2025, 12:38:44 PM"},{"title":"येत्या ४८ तासांत राज्यात मुसळधार पावसाचा इशारा; शेतकऱ्यांना सतर्क राहण्याचे आवाहन (sample news)","desc":"`हवामान विभागाने दिलेल्या माहितीनुसार, येत्या दोन दिवसांत राज्याच्या काही भागांत जोरदार पावसाची शक्यता आहे. बंगालच्या उपसागरात कमी दाबाचा पट्टा निर्माण झाल्यामुळे हा बदल जाणवत आहे.\n\nकोकण आणि पश्चिम महाराष्ट्रात ऑरेंज अलर्ट जारी करण्यात आला आहे. विजेच्या कडकडाटासह पाऊस पडण्याची शक्यता असल्याने शेतकऱ्यांनी आपली काढणी केलेली पिके सुरक्षित ठिकाणी ठेवावीत, असे आवाहन कृषी विभागाने केले आहे. तसेच, नदीकाठच्या गावांना सतर्कतेचा इशारा देण्यात आला आहे.`","images":["https://news.bizc.in/assets/news_3485486.jpg","https://news.bizc.in/assets/news_5759854.jpg"],"links":[{"text":"News","url":"#"},{"text":"News 2","url":"#"}],"date":"12/22/2025, 12:43:42 PM"}];
-            var currentPage = 1;
-            var perPage = 25;
-            
-            function renderNewsPage(page) {
-                var start = (page - 1) * perPage;
-                var end = start + perPage;
-                var newsToDisplay = allNewsData.slice(start, end);
-                
-                var container = document.getElementById('dynamicNewsContainer');
-                container.innerHTML = ''; 
-
-                if(newsToDisplay.length === 0) {
-                    container.innerHTML = '<div style="text-align:center; padding:20px;">No more news available.</div>';
-                    return;
-                }
-
-                newsToDisplay.forEach((news, index) => {
-                     var realIndex = start + index;
-                     var dateStr = news.date ? news.date.split(',')[0] : '';
-                     
-                     var imageHtml = "";
-                     if (news.images && news.images.length > 0) {
-                         imageHtml = '<div class="news-thumb"><img src="' + news.images[0] + '" loading="lazy"></div>';
-                     }
-
-                     var linksHtml = "";
-                     if (news.links && news.links.length > 0) {
-                         linksHtml += '<div class="news-links-box">';
-                         news.links.forEach(l => {
-                             linksHtml += '<a href="' + l.url + '" target="_blank" class="btn-news-link"><i class="fas fa-link"></i> ' + l.text + '</a> ';
-                         });
-                         linksHtml += '</div>';
-                     }
-                     
-                     var descId = "desc_" + realIndex;
-                     var fullDesc = news.desc.replace(/\n/g, '<br>');
-                     var shortDesc = fullDesc.substring(0, 150) + "...";
-                     var isLong = fullDesc.length > 150;
-                     
-                     var readMoreHtml = isLong ? 
-                        '<button onclick="toggleNews(\'' + descId + '\')" class="read-more-btn" id="btn_' + descId + '">सविस्तर वाचा</button>' : '';
-
-                     var cardHtml = 
-                      '<div class="news-card">' +
-                          imageHtml +
-                          '<div class="news-body">' +
-                              '<div class="news-meta"><i class="far fa-clock"></i> ' + dateStr + '</div>' +
-                              '<h2 class="news-title">' + news.title + '</h2>' +
-                              '<div class="news-desc">' +
-                                  '<span id="short_' + descId + '">' + (isLong ? shortDesc : fullDesc) + '</span>' +
-                                  '<span id="full_' + descId + '" style="display:none;">' + fullDesc + '</span>' +
-                              '</div>' +
-                              readMoreHtml +
-                              linksHtml +
-                          '</div>' +
-                      '</div>';
-                      
-                      container.innerHTML += cardHtml;
-                });
+    <main>
+        
+        &lt;section id=&#34;home&#34; style=&#34;padding: 0; border-bottom: 1px solid #eee; scroll-margin-top: 70px;&#34;&gt;
+            &lt;div style=&#34;&#34;&gt;
                 
                 
-                document.getElementById('pageInfo').innerText = 'Page ' + page + ' of ' + Math.ceil(allNewsData.length / perPage);
-                document.getElementById('btnPrev').disabled = (page === 1);
-                document.getElementById('btnNext').disabled = (end >= allNewsData.length);
-                
-                
-                if(page > 1) {
-                    document.getElementById('dynamicNewsContainer').scrollIntoView({behavior: 'smooth'});
-                }
-            }
-            
-            function changePage(dir) {
-                currentPage += dir;
-                renderNewsPage(currentPage);
-            }
+        &lt;div style=&#34;position:relative; text-align:center; color:white; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(&#39;https://vedchitra.github.io/newsapp/assets/img_1766400896.png&#39;); background-size: cover; background-position: center; padding: 100px 20px;&#34;&gt;
+            &lt;h1 style=&#34;font-size: 3em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);&#34;&gt;Royal Driving School, Ajara&lt;/h1&gt;
+            &lt;p style=&#34;font-size: 1.2em; margin-bottom: 30px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);&#34;&gt;Safe Driving, Safe Life&lt;/p&gt;
+            &lt;a href=&#34;#contact&#34; style=&#34;background: #f39c12; color: white; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 50px; font-size: 1em; transition: 0.3s; display:inline-block;&#34;&gt;
+                Call Now &lt;i class=&#34;fas fa-arrow-right&#34; style=&#34;margin-left:5px;&#34;&gt;&lt;/i&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;section id=&#34;about&#34; style=&#34;padding: 60px 20px; border-bottom: 1px solid #eee; scroll-margin-top: 70px;&#34;&gt;
+            &lt;div style=&#34;max-width: 1100px; margin: 0 auto;&#34;&gt;
+                &lt;h2 style=&#34;color:#2c3e50; text-align:center; margin-bottom:40px; text-transform:uppercase; letter-spacing:1px;&#34;&gt;ABOUT&lt;/h2&gt;
+                &lt;div style=&#34;font-size: 1.1em; line-height: 1.8; color: #555; margin-bottom: 30px; white-space: pre-wrap;&#34;&gt;Add about us text...&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;section id=&#34;courses&#34; style=&#34;padding: 60px 20px; border-bottom: 1px solid #eee; scroll-margin-top: 70px;&#34;&gt;
+            &lt;div style=&#34;max-width: 1100px; margin: 0 auto;&#34;&gt;
+                &lt;h2 style=&#34;color:#2c3e50; text-align:center; margin-bottom:40px; text-transform:uppercase; letter-spacing:1px;&#34;&gt;COURSES&lt;/h2&gt;
+                &lt;p style=&#34;text-align:center; color:#777;&#34;&gt;No courses added yet.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;section id=&#34;contact&#34; style=&#34;padding: 60px 20px; border-bottom: 1px solid #eee; scroll-margin-top: 70px;&#34;&gt;
+            &lt;div style=&#34;max-width: 1100px; margin: 0 auto;&#34;&gt;
+                &lt;h2 style=&#34;color:#2c3e50; text-align:center; margin-bottom:40px; text-transform:uppercase; letter-spacing:1px;&#34;&gt;CONTACT&lt;/h2&gt;
+                &lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;&#34;&gt;
+            &lt;div&gt;
+                 &lt;div style=&#34;display:flex; gap:15px; margin-bottom:25px;&#34;&gt;
+                     &lt;i class=&#34;fas fa-map-marker-alt&#34; style=&#34;font-size: 1.5em; color: #f39c12; margin-top:5px;&#34;&gt;&lt;/i&gt;
+                     &lt;div&gt;&lt;h4 style=&#34;margin:0 0 5px; color:#2c3e50;&#34;&gt;Address&lt;/h4&gt;&lt;p style=&#34;margin:0; color:#555; line-height:1.6;&#34;&gt;Address not available&lt;/p&gt;&lt;/div&gt;
+                 &lt;/div&gt;
+                 &lt;div style=&#34;display:flex; gap:15px; margin-bottom:25px;&#34;&gt;
+                     &lt;i class=&#34;fas fa-phone-alt&#34; style=&#34;font-size: 1.5em; color: #f39c12; margin-top:5px;&#34;&gt;&lt;/i&gt;
+                     &lt;div&gt;&lt;h4 style=&#34;margin:0 0 5px; color:#2c3e50;&#34;&gt;Phone&lt;/h4&gt;
+                        &lt;p style=&#34;margin:0; color:#555;&#34;&gt;&lt;a href=&#34;tel:undefined&#34;&gt;N/A&lt;/a&gt;&lt;/p&gt;
+                     &lt;/div&gt;
+                 &lt;/div&gt;
+                 &lt;div style=&#34;display:flex; gap:15px; margin-bottom:25px;&#34;&gt;
+                     &lt;i class=&#34;fab fa-whatsapp&#34; style=&#34;font-size: 1.5em; color: #25D366; margin-top:5px;&#34;&gt;&lt;/i&gt;
+                     &lt;div&gt;&lt;h4 style=&#34;margin:0 0 5px; color:#2c3e50;&#34;&gt;WhatsApp&lt;/h4&gt;
+                        &lt;p style=&#34;margin:0; color:#555;&#34;&gt;&lt;a href=&#34;https://wa.me/&#34; target=&#34;_blank&#34;&gt;N/A&lt;/a&gt;&lt;/p&gt;
+                     &lt;/div&gt;
+                 &lt;/div&gt;
+                 
+            &lt;/div&gt;
 
-            function toggleNews(id) {
-              var short = document.getElementById('short_' + id);
-              var full = document.getElementById('full_' + id);
-              var btn = document.getElementById('btn_' + id);
-              
-              if(full.style.display === 'none') {
-                  full.style.display = 'inline';
-                  short.style.display = 'none';
-                  btn.innerText = 'कमी करा (Show Less)';
-              } else {
-                  full.style.display = 'none';
-                  short.style.display = 'inline';
-                  btn.innerText = 'सविस्तर वाचा';
-              }
-            }
-            
-            
-            window.onload = function() { renderNewsPage(1); };
-        </script>
-              
-        <div id="install-app-card" style="display:none; background:linear-gradient(to right, #cc0000, #990000); color:white; padding:20px; border-radius:10px; margin-top:30px; text-align:center;">
-            <h3 style="margin:0;">📲 हे न्यूज अ‍ॅप तुमच्या मोबाईलमध्ये घ्या!</h3>
-            <p style="font-size:14px; opacity:0.9;">जलद बातम्या मिळवण्यासाठी आमचे अ‍ॅप इन्स्टॉल करा.</p>
-            <button id="installBtn" style="background:white; color:#cc0000; border:none; padding:10px 20px; font-weight:bold; border-radius:20px; cursor:pointer; margin-top:10px;">
-                <i class="fas fa-download"></i> Install App Now
-            </button>
-        </div>
-    </main>
+            &lt;div style=&#34;border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); min-height: 300px;&#34;&gt;
+                &lt;div style=&#34;width:100%; height:100%; background:#eee; display:flex; align-items:center; justify-content:center; color:#999;&#34;&gt;&lt;i class=&#34;fas fa-map-marked-alt fa-2x&#34;&gt;&lt;/i&gt;&lt;p style=&#34;margin-left:10px;&#34;&gt;Map not added&lt;/p&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;    </main>
 
     <footer class="footer">
-        <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:30px;">
+        <div class="footer-grid">
             
             <div>
-                <h3>Sections</h3>
-                                                                </div>
+                <h3><i class="fas fa-steering-wheel"></i> About School</h3>
+                <p style="font-size:14px; line-height:1.8; opacity:0.8;">
+                    We provide professional driving training with a focus on safety and rules.                </p>
+                <div style="margin-top:20px;">
+                     <a href="tel:"><i class="fas fa-phone-alt"></i> Call Us</a>
+                </div>
+            </div>
 
             <div>
-                <h3>Important</h3>
-                                                                 </div>
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <a href="#home"><i class="fas fa-chevron-right" style="font-size:10px;"></i> Home</a>
+                <a href="#about"><i class="fas fa-chevron-right" style="font-size:10px;"></i> About Us</a>
+                <a href="#courses"><i class="fas fa-chevron-right" style="font-size:10px;"></i> Courses</a>
+                <a href="#contact"><i class="fas fa-chevron-right" style="font-size:10px;"></i> Contact & Map</a>
+            </div>
 
              <div>
-                <h3>Connect</h3>
-                                                                 </div>
+                <h3><i class="fas fa-external-link-alt"></i> Important Links</h3>
+                                      <a href="#"><i class="fas fa-angle-double-right"></i> Learner License Apply</a>
+                     <a href="#"><i class="fas fa-angle-double-right"></i> RTO Forms</a>
+                            </div>
 
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 <strong>Star News</strong>. All Rights Reserved.</p>
+            <p>&copy; 2025 <strong>Driving School</strong>. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
         
-        const d = new Date();
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById("currentDate").innerText = d.toLocaleDateString('mr-IN', options);
-
-        
-        function toggleMobileMenu() {
+        function toggleMenu() {
             document.getElementById("mainNavbar").classList.toggle("show-menu");
         }
-
         
-        function toggleDrawer() {
-            document.getElementById("appDrawer").style.left = "0";
-            document.querySelector(".side-drawer-overlay").style.display = "block";
-        }
-        function closeDrawer() {
-            document.getElementById("appDrawer").style.left = "-280px";
-            document.querySelector(".side-drawer-overlay").style.display = "none";
-        }
-        function goBack() {
-            closeDrawer();
-            if(window.history.length > 1) { window.history.back(); } 
-            else { window.location.href = 'index.html'; }
-        }
-
-        
-        let deferredPrompt;
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            
-            if (!window.matchMedia('(display-mode: standalone)').matches) {
-                document.getElementById('install-app-card').style.display = 'block';
+        function closeMenu() {
+            if(window.innerWidth <= 768) {
+                document.getElementById("mainNavbar").classList.remove("show-menu");
             }
-        });
-
-        document.getElementById('installBtn').addEventListener('click', async () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                if (outcome === 'accepted') {
-                    document.getElementById('install-app-card').style.display = 'none';
-                }
-                deferredPrompt = null;
-            }
-        });
+        }
 
         
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js');
+            navigator.serviceWorker.register('service-worker.js').catch(err => console.log('SW Init Error', err));
         }
     </script>
     
     <script type="text/javascript">
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'mr', includedLanguages: 'mr,hi,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,hi,mr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
     }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
