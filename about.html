@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Star News</title>
+    
+    <meta name="description" content="सत्यमेव जयते..">
+    <link rel="icon" type="image/x-icon" href="https://news.bizc.in/assets/news_4326774.png">
+    <meta name="theme-color" content="#cc0000">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700;800&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <style>
+         
+        :root {
+            --primary: #cc0000;    
+            --dark-red: #990000;
+            --blue: #003366;       
+            --dark: #1a1a1a;       
+            --gray: #f4f4f4;       
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Mukta', 'Roboto', sans-serif;  
+            margin: 0;
+            padding: 0;
+            background-color: var(--gray);
+            color: var(--dark);
+            line-height: 1.6;
+            overscroll-behavior-y: none;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+        img { max-width: 100%; height: auto; }
+
+         
+        .top-bar {
+            background: var(--dark);
+            color: #ccc;
+            padding: 5px 5%;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+        }
+        
+         
+        .goog-te-banner-frame { display: none !important; }
+        body { top: 0px !important; }
+        .goog-te-gadget-simple { background: transparent !important; border: none !important; padding: 0 !important; font-size: 12px !important; color: #ccc !important; }
+        .goog-te-gadget-simple a { color: #fff !important; text-decoration: none !important; font-weight: bold; }
+        .goog-te-gadget-icon { display: none !important; }
+
+        .header-main {
+            background: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid var(--primary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .logo { width: 90px; margin-right: 20px; object-fit: contain; }
+
+        .site-title h1 {
+            margin: 0;
+            font-size: 32px;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .site-title p {
+            margin: 2px 0 0;
+            font-size: 14px;
+            color: #555;
+            font-weight: 600;
+        }
+
+         
+        .nav-wrapper {
+            background: var(--blue);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;  
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav a {
+            color: var(--white);
+            padding: 12px 20px;
+            font-weight: 700;
+            font-size: 16px;
+            display: block;
+            border-bottom: 3px solid transparent;
+            text-transform: uppercase;
+        }
+
+        .nav a:hover, .nav a.active {
+            background-color: rgba(255,255,255,0.1);
+            border-bottom: 3px solid var(--primary);
+        }
+
+         
+        .menu-toggle-btn {
+            display: none;
+            background: none; border: none; color: white;
+            font-size: 24px; cursor: pointer; padding: 10px;
+        }
+        .mobile-header-flex { display: none; }
+
+         
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 20px;
+            min-height: 60vh;
+        }
+
+         
+        .section-title {
+            color: var(--blue);
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 8px;
+            margin: 30px 0 20px;
+            font-size: 24px;
+            font-weight: 800;
+        }
+        
+         
+        .breaking-news {
+            background: #222; color: white; display: flex; align-items: center;
+            font-size: 14px; font-weight: bold; overflow: hidden;
+            border-bottom: 1px solid #444;
+        }
+        .bn-label { background: var(--primary); padding: 8px 15px; text-transform: uppercase; white-space: nowrap; z-index: 2; }
+        .bn-content { padding: 8px; white-space: nowrap; animation: ticker 20s linear infinite; }
+        @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+         
+        .footer {
+            background: #111;
+            color: #bbb;
+            padding: 40px 20px 10px;
+            margin-top: 40px;
+            border-top: 5px solid var(--primary);
+        }
+        .footer h3 { color: white; border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block; margin-bottom: 20px; }
+        .footer a { color: #ddd; display: block; margin-bottom: 8px; font-size: 14px; }
+        .footer a:hover { color: var(--primary); padding-left: 5px; }
+        .footer-bottom { border-top: 1px solid #333; margin-top: 30px; padding-top: 15px; text-align: center; font-size: 13px; }
+
+         
+        @media (max-width: 1024px) {
+            .nav-wrapper { padding: 0 15px; display: flex; align-items: center; justify-content: space-between; }
+            .mobile-header-flex { display: flex; align-items: center; width: 100%; justify-content: space-between; }
+            .menu-toggle-btn { display: block; }
+            .menu-label { color: white; font-weight: bold; font-size: 18px; }
+
+            .nav {
+                display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%;
+                background: var(--blue); border-top: 1px solid rgba(255,255,255,0.1);
+            }
+            .nav.show-menu { display: flex; }
+            .nav a { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 15px; }
+            
+            .header-main { flex-direction: column; text-align: center; padding: 15px; }
+            .logo { margin: 0 0 10px 0; width: 80px; }
+            .site-title h1 { font-size: 26px; }
+        }
+
+         
+        .app-bar {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 56px;
+            background: var(--primary); color: white; z-index: 9999;
+            align-items: center; justify-content: space-between; padding: 0 15px; box-sizing: border-box;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .app-title { font-size: 18px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .app-btn { background: none; border: none; color: white; font-size: 20px; cursor: pointer; padding: 5px; }
+
+         
+        .side-drawer-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; }
+        .side-drawer {
+            position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background: white; z-index: 10001;
+            transition: left 0.3s ease; box-shadow: 2px 0 10px rgba(0,0,0,0.1); display: flex; flex-direction: column;
+        }
+        .drawer-header { background: var(--primary); padding: 25px 20px; color: white; }
+        .drawer-header h2 { margin: 0; font-size: 20px; }
+        .drawer-links { padding: 10px 0; overflow-y: auto; flex: 1; }
+        .drawer-item { display: flex; align-items: center; gap: 15px; padding: 12px 20px; color: #333; font-weight: 500; border-bottom: 1px solid #eee; }
+        .drawer-item i { width: 25px; color: var(--primary); text-align: center; }
+        .drawer-item:hover { background: #fff5f5; color: var(--primary); }
+
+         
+        @media all and (display-mode: standalone) {
+            .top-bar, .header-main, .nav-wrapper, .footer { display: none !important; }
+            .app-bar { display: flex !important; }
+            .container { margin-top: 60px !important; padding: 10px !important; }
+            body { background: white; }
+        }
+
+         
+        #app-loader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 20000;
+            display: none; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3; border-top: 4px solid var(--primary); border-radius: 50%; width: 40px; height: 40px; animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    </style>
+</head>
+<body>
+
+    <div class="app-bar">
+        <button class="app-btn" onclick="goBack()"><i class="fas fa-arrow-left"></i></button>
+        <div class="app-title">Star News</div>
+        <button class="app-btn" onclick="toggleDrawer()"><i class="fas fa-bars"></i></button>
+    </div>
+
+    <div class="side-drawer-overlay" onclick="closeDrawer()"></div>
+    <div class="side-drawer" id="appDrawer">
+        <div class="drawer-header">
+            <h2><i class="fas fa-newspaper"></i> मेनू</h2>
+            <div style="font-size:12px; opacity:0.8;">News Portal App</div>
+        </div>
+        <div class="drawer-links">
+            <a href="index.html" class="drawer-item"><i class="fas fa-home"></i> मुख्यपृष्ठ (Home)</a>
+            <a href="about.html" class="drawer-item"><i class="fas fa-info-circle"></i> आमच्याबद्दल</a>
+            <a href="contact.html" class="drawer-item"><i class="fas fa-phone"></i> संपर्क</a>
+            <a href="terms.html" class="drawer-item"><i class="fas fa-file-contract"></i> नियम व अटी</a>
+            <a href="privacy.html" class="drawer-item"><i class="fas fa-user-shield"></i> प्रायव्हसी पॉलिसी</a>
+            <hr>
+            <a href="#" onclick="window.location.reload()" class="drawer-item"><i class="fas fa-sync"></i> रिफ्रेश करा</a>
+        </div>
+    </div>
+
+    <div id="app-loader">
+        <div class="spinner"></div>
+        <p style="margin-top:15px; color:#555; font-size:14px;">Loading News...</p>
+    </div>
+
+    <div class="top-bar">
+        <div><i class="far fa-calendar-alt"></i> <span id="currentDate"></span></div>
+        <div style="display:flex; align-items:center; gap:15px;">
+             <div id="google_translate_element"></div>
+             
+             <a href="#" style="color:#ccc;"><i class="fab fa-facebook"></i></a>
+             <a href="#" style="color:#ccc;"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <header class="header-main">
+                     <img src="https://news.bizc.in/assets/news_4326774.png" alt="Logo" class="logo">
+                <div class="site-title">
+            <h1>Star News</h1>
+            <p>सत्यमेव जयते..</p>
+        </div>
+    </header>
+
+    <div class="nav-wrapper">
+        <div class="mobile-header-flex">
+            <span class="menu-label" style="padding-left:15px;">MENU</span>
+            <button class="menu-toggle-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+        <nav class="nav" id="mainNavbar">
+            <a href="index.html" class="">Home</a>
+            <a href="about.html" class="active">About Us</a>
+            <a href="contact.html" class="">Contact</a>
+            <a href="terms.html" class="">Terms</a>
+            <a href="privacy.html" class="">Privacy</a>
+        </nav>
+    </div>
+
+    <main class="container">
+        <div style="max-width:1000px; margin:0 auto; padding:20px;"><div class="content-text" style="font-size:16px; line-height:1.8; color:#444; margin-bottom:20px; white-space: pre-wrap;">New Content</div></div>        
+        <div id="install-app-card" style="display:none; background:linear-gradient(to right, #cc0000, #990000); color:white; padding:20px; border-radius:10px; margin-top:30px; text-align:center;">
+            <h3 style="margin:0;">📲 हे न्यूज अ‍ॅप तुमच्या मोबाईलमध्ये घ्या!</h3>
+            <p style="font-size:14px; opacity:0.9;">जलद बातम्या मिळवण्यासाठी आमचे अ‍ॅप इन्स्टॉल करा.</p>
+            <button id="installBtn" style="background:white; color:#cc0000; border:none; padding:10px 20px; font-weight:bold; border-radius:20px; cursor:pointer; margin-top:10px;">
+                <i class="fas fa-download"></i> Install App Now
+            </button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:30px;">
+            
+            <div>
+                <h3>Sections</h3>
+                                                                </div>
+
+            <div>
+                <h3>Important</h3>
+                                                                 </div>
+
+             <div>
+                <h3>Connect</h3>
+                                                                 </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 <strong>Star News</strong>. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        const d = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById("currentDate").innerText = d.toLocaleDateString('mr-IN', options);
+
+        
+        function toggleMobileMenu() {
+            document.getElementById("mainNavbar").classList.toggle("show-menu");
+        }
+
+        
+        function toggleDrawer() {
+            document.getElementById("appDrawer").style.left = "0";
+            document.querySelector(".side-drawer-overlay").style.display = "block";
+        }
+        function closeDrawer() {
+            document.getElementById("appDrawer").style.left = "-280px";
+            document.querySelector(".side-drawer-overlay").style.display = "none";
+        }
+        function goBack() {
+            closeDrawer();
+            if(window.history.length > 1) { window.history.back(); } 
+            else { window.location.href = 'index.html'; }
+        }
+
+        
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            if (!window.matchMedia('(display-mode: standalone)').matches) {
+                document.getElementById('install-app-card').style.display = 'block';
+            }
+        });
+
+        document.getElementById('installBtn').addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    document.getElementById('install-app-card').style.display = 'none';
+                }
+                deferredPrompt = null;
+            }
+        });
+
+        
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js');
+        }
+    </script>
+    
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'mr', includedLanguages: 'mr,hi,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
