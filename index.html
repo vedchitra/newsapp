@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | News Portal</title>
+    
+    <meta name="description" content="ताज्या बातम्या आणि घडामोडी.">
+    <link rel="icon" type="image/x-icon" href="">
+    <meta name="theme-color" content="#cc0000">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700;800&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <style>
+         
+        :root {
+            --primary: #cc0000;    
+            --dark-red: #990000;
+            --blue: #003366;       
+            --dark: #1a1a1a;       
+            --gray: #f4f4f4;       
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Mukta', 'Roboto', sans-serif;  
+            margin: 0;
+            padding: 0;
+            background-color: var(--gray);
+            color: var(--dark);
+            line-height: 1.6;
+            overscroll-behavior-y: none;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+        img { max-width: 100%; height: auto; }
+
+         
+        .top-bar {
+            background: var(--dark);
+            color: #ccc;
+            padding: 5px 5%;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+        }
+        
+         
+        .goog-te-banner-frame { display: none !important; }
+        body { top: 0px !important; }
+        .goog-te-gadget-simple { background: transparent !important; border: none !important; padding: 0 !important; font-size: 12px !important; color: #ccc !important; }
+        .goog-te-gadget-simple a { color: #fff !important; text-decoration: none !important; font-weight: bold; }
+        .goog-te-gadget-icon { display: none !important; }
+
+        .header-main {
+            background: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid var(--primary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .logo { width: 90px; margin-right: 20px; object-fit: contain; }
+
+        .site-title h1 {
+            margin: 0;
+            font-size: 32px;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .site-title p {
+            margin: 2px 0 0;
+            font-size: 14px;
+            color: #555;
+            font-weight: 600;
+        }
+
+         
+        .nav-wrapper {
+            background: var(--blue);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;  
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav a {
+            color: var(--white);
+            padding: 12px 20px;
+            font-weight: 700;
+            font-size: 16px;
+            display: block;
+            border-bottom: 3px solid transparent;
+            text-transform: uppercase;
+        }
+
+        .nav a:hover, .nav a.active {
+            background-color: rgba(255,255,255,0.1);
+            border-bottom: 3px solid var(--primary);
+        }
+
+         
+        .menu-toggle-btn {
+            display: none;
+            background: none; border: none; color: white;
+            font-size: 24px; cursor: pointer; padding: 10px;
+        }
+        .mobile-header-flex { display: none; }
+
+         
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 20px;
+            min-height: 60vh;
+        }
+
+         
+        .section-title {
+            color: var(--blue);
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 8px;
+            margin: 30px 0 20px;
+            font-size: 24px;
+            font-weight: 800;
+        }
+        
+         
+        .breaking-news {
+            background: #222; color: white; display: flex; align-items: center;
+            font-size: 14px; font-weight: bold; overflow: hidden;
+            border-bottom: 1px solid #444;
+        }
+        .bn-label { background: var(--primary); padding: 8px 15px; text-transform: uppercase; white-space: nowrap; z-index: 2; }
+        .bn-content { padding: 8px; white-space: nowrap; animation: ticker 20s linear infinite; }
+        @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+         
+        .footer {
+            background: #111;
+            color: #bbb;
+            padding: 40px 20px 10px;
+            margin-top: 40px;
+            border-top: 5px solid var(--primary);
+        }
+        .footer h3 { color: white; border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block; margin-bottom: 20px; }
+        .footer a { color: #ddd; display: block; margin-bottom: 8px; font-size: 14px; }
+        .footer a:hover { color: var(--primary); padding-left: 5px; }
+        .footer-bottom { border-top: 1px solid #333; margin-top: 30px; padding-top: 15px; text-align: center; font-size: 13px; }
+
+         
+        @media (max-width: 1024px) {
+            .nav-wrapper { padding: 0 15px; display: flex; align-items: center; justify-content: space-between; }
+            .mobile-header-flex { display: flex; align-items: center; width: 100%; justify-content: space-between; }
+            .menu-toggle-btn { display: block; }
+            .menu-label { color: white; font-weight: bold; font-size: 18px; }
+
+            .nav {
+                display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%;
+                background: var(--blue); border-top: 1px solid rgba(255,255,255,0.1);
+            }
+            .nav.show-menu { display: flex; }
+            .nav a { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 15px; }
+            
+            .header-main { flex-direction: column; text-align: center; padding: 15px; }
+            .logo { margin: 0 0 10px 0; width: 80px; }
+            .site-title h1 { font-size: 26px; }
+        }
+
+         
+        .app-bar {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 56px;
+            background: var(--primary); color: white; z-index: 9999;
+            align-items: center; justify-content: space-between; padding: 0 15px; box-sizing: border-box;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .app-title { font-size: 18px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .app-btn { background: none; border: none; color: white; font-size: 20px; cursor: pointer; padding: 5px; }
+
+         
+        .side-drawer-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; }
+        .side-drawer {
+            position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background: white; z-index: 10001;
+            transition: left 0.3s ease; box-shadow: 2px 0 10px rgba(0,0,0,0.1); display: flex; flex-direction: column;
+        }
+        .drawer-header { background: var(--primary); padding: 25px 20px; color: white; }
+        .drawer-header h2 { margin: 0; font-size: 20px; }
+        .drawer-links { padding: 10px 0; overflow-y: auto; flex: 1; }
+        .drawer-item { display: flex; align-items: center; gap: 15px; padding: 12px 20px; color: #333; font-weight: 500; border-bottom: 1px solid #eee; }
+        .drawer-item i { width: 25px; color: var(--primary); text-align: center; }
+        .drawer-item:hover { background: #fff5f5; color: var(--primary); }
+
+         
+        @media all and (display-mode: standalone) {
+            .top-bar, .header-main, .nav-wrapper, .footer { display: none !important; }
+            .app-bar { display: flex !important; }
+            .container { margin-top: 60px !important; padding: 10px !important; }
+            body { background: white; }
+        }
+
+         
+        #app-loader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 20000;
+            display: none; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3; border-top: 4px solid var(--primary); border-radius: 50%; width: 40px; height: 40px; animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    </style>
+</head>
+<body>
+
+    <div class="app-bar">
+        <button class="app-btn" onclick="goBack()"><i class="fas fa-arrow-left"></i></button>
+        <div class="app-title">News App</div>
+        <button class="app-btn" onclick="toggleDrawer()"><i class="fas fa-bars"></i></button>
+    </div>
+
+    <div class="side-drawer-overlay" onclick="closeDrawer()"></div>
+    <div class="side-drawer" id="appDrawer">
+        <div class="drawer-header">
+            <h2><i class="fas fa-newspaper"></i> मेनू</h2>
+            <div style="font-size:12px; opacity:0.8;">News Portal App</div>
+        </div>
+        <div class="drawer-links">
+            <a href="index.html" class="drawer-item"><i class="fas fa-home"></i> मुख्यपृष्ठ (Home)</a>
+            <a href="about.html" class="drawer-item"><i class="fas fa-info-circle"></i> आमच्याबद्दल</a>
+            <a href="contact.html" class="drawer-item"><i class="fas fa-phone"></i> संपर्क</a>
+            <a href="terms.html" class="drawer-item"><i class="fas fa-file-contract"></i> नियम व अटी</a>
+            <a href="privacy.html" class="drawer-item"><i class="fas fa-user-shield"></i> प्रायव्हसी पॉलिसी</a>
+            <hr>
+            <a href="#" onclick="window.location.reload()" class="drawer-item"><i class="fas fa-sync"></i> रिफ्रेश करा</a>
+        </div>
+    </div>
+
+    <div id="app-loader">
+        <div class="spinner"></div>
+        <p style="margin-top:15px; color:#555; font-size:14px;">Loading News...</p>
+    </div>
+
+    <div class="top-bar">
+        <div><i class="far fa-calendar-alt"></i> <span id="currentDate"></span></div>
+        <div style="display:flex; align-items:center; gap:15px;">
+             <div id="google_translate_element"></div>
+             
+             <a href="#" style="color:#ccc;"><i class="fab fa-facebook"></i></a>
+             <a href="#" style="color:#ccc;"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <header class="header-main">
+                <div class="site-title">
+            <h1>NEWS PORTAL</h1>
+            <p>तुमच्या हक्काचे व्यासपीठ</p>
+        </div>
+    </header>
+
+    <div class="nav-wrapper">
+        <div class="mobile-header-flex">
+            <span class="menu-label" style="padding-left:15px;">MENU</span>
+            <button class="menu-toggle-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+        <nav class="nav" id="mainNavbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html" class="">About Us</a>
+            <a href="contact.html" class="">Contact</a>
+            <a href="terms.html" class="">Terms</a>
+            <a href="privacy.html" class="">Privacy</a>
+        </nav>
+    </div>
+
+    <main class="container">
+        <div id="dynamicNewsContainer" style="max-width:1000px; margin:0 auto; padding:10px; min-height:300px;">
+          <div style="text-align:center; padding:50px;"><i class="fas fa-circle-notch fa-spin"></i> Loading News...</div>
+      </div>
+      <div class="pagination-wrapper" style="text-align:center; margin:30px 0; padding-bottom:30px;">
+          <button id="btnPrev" onclick="changePage(-1)" class="page-btn" disabled>« Previous</button>
+          <span id="pageInfo" style="margin:0 15px; font-weight:bold; color:#555;">Page 1</span>
+          <button id="btnNext" onclick="changePage(1)" class="page-btn">Next »</button>
+      </div>
+      <style>
+          .news-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.08); margin-bottom: 25px; border: 1px solid #eee; animation: fadeIn 0.5s; }
+          .news-thumb img { width: 100%; height: auto; max-height: 400px; object-fit: cover; display: block; }
+          .news-body { padding: 20px; }
+          .news-meta { font-size: 12px; color: #888; margin-bottom: 8px; font-weight: bold; }
+          .news-title { margin: 0 0 10px 0; color: #cc0000; font-size: 22px; line-height: 1.3; }
+          .news-desc { font-size: 16px; color: #333; line-height: 1.6; margin-bottom: 15px; }
+          .read-more-btn { background: #000080; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-size: 14px; margin-bottom:10px; }
+          .news-links-box { margin-top: 10px; padding-top: 10px; border-top: 1px dashed #ddd; }
+          .btn-news-link { display: inline-block; background: #f8f9fa; color: #007bff; padding: 6px 12px; border: 1px solid #dee2e6; border-radius: 20px; text-decoration: none; font-size: 13px; margin-right: 5px; margin-bottom: 5px; font-weight: bold; }
+          
+           
+          .page-btn { background: #cc0000; color: white; border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: bold; transition:0.3s; }
+          .page-btn:disabled { background: #ccc; cursor: not-allowed; }
+          .page-btn:hover:not(:disabled) { background: #990000; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+          
+          @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+          @media (min-width: 768px) {
+              .news-card { display: flex; align-items: flex-start; }
+              .news-thumb { width: 40%; flex-shrink: 0; }
+              .news-thumb img { height: 100%; min-height: 250px; }
+              .news-body { width: 60%; }
+          }
+      </style>
+        <script>
+            var allNewsData = [{"title":"कोल्हापूरमध्ये महायुतीला कौल, महाविकास आघाडी समोर आव्हान","desc":"विधानसभा निवडणुकीप्रमाणेच कोल्हापूर जिल्ह्यातील नगरपालिकेच्या निवडणुकीचा निकाल हा महायुतीचा उत्साह वाढवणारा ठरला आहे. १३ पैकी ११ नगरपालिकांवर भगवा फडकल्याने महायुतीला जिल्ह्यातील दोन्ही महापालिका निवडणुकीसाठी पूरक वातावरण झाले आहे. दोन नगरपालिका मध्ये प्रभाव दाखवणाऱ्या महाविकास आघाडी समोरील आव्हाने अधिकच वाढलेली असतील.\n\nजिल्ह्यातील नगरपालिकांच्या निवडणुका चुरशीने झाल्या. आघाडी , युती यांची धक्कादायक समीकरणे पुढे आली होती. मतमोजणीनंतर निकालाचा कल हा महायुतीच्या दिशेने गेला. विधानसभा निवडणुकीत सर्व दहा मतदार संघात महायुतीने निर्भेळ यश प्राप्त केले होते. त्याचीच पुनरावृत्ती पालिका निवडणुकीत दिसून आली. कमालीची चुरस असतानाही स्थानिक नेत्यांनी आपापले बालेकिल्ले राखले हे या निवडणुकीचे प्रमुख वैशिष्ट्य म्हणावे लागेल. कोणत्याही प्रमुख नेत्याला त्यांच्या पालिकेवरील प्रभुत्व गमावण्याची वेळ आली नाही.\n\nगडहिंग्लज नगरपालिकेत सर्व पक्षांनी घेरले असताना त्यातून अलगद सुटत हसन मुश्रीफ यांनी यश खेचून आणत तेल लावलेला कसबी पैलवान कसा असतो हे कोल्हापूरच्या आखाड्यात दाखवून दिले. मुश्रीफ यांनी समरजित घाटगे यांना सोबत घेत कागल पालिकेत धवल यश मिळवले. या दोघांना मुरगुडचा गड भेदता आला नाही. येथे माजी खासदार संजय मंडलिक यांनी प्रवीणसिंह पाटील यांच्यासोबत सत्ता संपादन केली. हसन मुश्रीफ यांनी शरद पवार राष्ट्रवादी काँग्रेसला सोबत घेऊन चंदगड मध्ये आव्हान निर्माण करण्याचा प्रयत्न केला होता. पण तो भाजप समर्थक आमदार शिवाजीराव पाटील यांनी धुळीस मिळवला.","images":["https://news.bizc.in/assets/news_3485486.jpg","https://news.bizc.in/assets/news_5759854.jpg"],"links":[{"text":"News","url":"https://www.loksatta.com/politics/mahayuti-maintains-stronghold-in-kolhapur-municipal-elections-while-opposition-mahavikas-aghadi-faces-serious-challenges-print-politics-news-rds-00-5589583/"}],"date":"12/22/2025, 12:29:08 PM"}];
+            var currentPage = 1;
+            var perPage = 25;
+            
+            function renderNewsPage(page) {
+                var start = (page - 1) * perPage;
+                var end = start + perPage;
+                var newsToDisplay = allNewsData.slice(start, end);
+                
+                var container = document.getElementById('dynamicNewsContainer');
+                container.innerHTML = ''; 
+
+                if(newsToDisplay.length === 0) {
+                    container.innerHTML = '<div style="text-align:center; padding:20px;">No more news available.</div>';
+                    return;
+                }
+
+                newsToDisplay.forEach((news, index) => {
+                     var realIndex = start + index;
+                     var dateStr = news.date ? news.date.split(',')[0] : '';
+                     
+                     var imageHtml = "";
+                     if (news.images && news.images.length > 0) {
+                         imageHtml = '<div class="news-thumb"><img src="' + news.images[0] + '" loading="lazy"></div>';
+                     }
+
+                     var linksHtml = "";
+                     if (news.links && news.links.length > 0) {
+                         linksHtml += '<div class="news-links-box">';
+                         news.links.forEach(l => {
+                             linksHtml += '<a href="' + l.url + '" target="_blank" class="btn-news-link"><i class="fas fa-link"></i> ' + l.text + '</a> ';
+                         });
+                         linksHtml += '</div>';
+                     }
+                     
+                     var descId = "desc_" + realIndex;
+                     var fullDesc = news.desc.replace(/\n/g, '<br>');
+                     var shortDesc = fullDesc.substring(0, 150) + "...";
+                     var isLong = fullDesc.length > 150;
+                     
+                     var readMoreHtml = isLong ? 
+                        '<button onclick="toggleNews(\'' + descId + '\')" class="read-more-btn" id="btn_' + descId + '">सविस्तर वाचा</button>' : '';
+
+                     var cardHtml = 
+                      '<div class="news-card">' +
+                          imageHtml +
+                          '<div class="news-body">' +
+                              '<div class="news-meta"><i class="far fa-clock"></i> ' + dateStr + '</div>' +
+                              '<h2 class="news-title">' + news.title + '</h2>' +
+                              '<div class="news-desc">' +
+                                  '<span id="short_' + descId + '">' + (isLong ? shortDesc : fullDesc) + '</span>' +
+                                  '<span id="full_' + descId + '" style="display:none;">' + fullDesc + '</span>' +
+                              '</div>' +
+                              readMoreHtml +
+                              linksHtml +
+                          '</div>' +
+                      '</div>';
+                      
+                      container.innerHTML += cardHtml;
+                });
+                
+                
+                document.getElementById('pageInfo').innerText = 'Page ' + page + ' of ' + Math.ceil(allNewsData.length / perPage);
+                document.getElementById('btnPrev').disabled = (page === 1);
+                document.getElementById('btnNext').disabled = (end >= allNewsData.length);
+                
+                
+                if(page > 1) {
+                    document.getElementById('dynamicNewsContainer').scrollIntoView({behavior: 'smooth'});
+                }
+            }
+            
+            function changePage(dir) {
+                currentPage += dir;
+                renderNewsPage(currentPage);
+            }
+
+            function toggleNews(id) {
+              var short = document.getElementById('short_' + id);
+              var full = document.getElementById('full_' + id);
+              var btn = document.getElementById('btn_' + id);
+              
+              if(full.style.display === 'none') {
+                  full.style.display = 'inline';
+                  short.style.display = 'none';
+                  btn.innerText = 'कमी करा (Show Less)';
+              } else {
+                  full.style.display = 'none';
+                  short.style.display = 'inline';
+                  btn.innerText = 'सविस्तर वाचा';
+              }
+            }
+            
+            
+            window.onload = function() { renderNewsPage(1); };
+        </script>
+              
+        <div id="install-app-card" style="display:none; background:linear-gradient(to right, #cc0000, #990000); color:white; padding:20px; border-radius:10px; margin-top:30px; text-align:center;">
+            <h3 style="margin:0;">📲 हे न्यूज अ‍ॅप तुमच्या मोबाईलमध्ये घ्या!</h3>
+            <p style="font-size:14px; opacity:0.9;">जलद बातम्या मिळवण्यासाठी आमचे अ‍ॅप इन्स्टॉल करा.</p>
+            <button id="installBtn" style="background:white; color:#cc0000; border:none; padding:10px 20px; font-weight:bold; border-radius:20px; cursor:pointer; margin-top:10px;">
+                <i class="fas fa-download"></i> Install App Now
+            </button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:30px;">
+            
+            <div>
+                <h3>Sections</h3>
+                                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                            </div>
+
+            <div>
+                <h3>Important</h3>
+                             </div>
+
+             <div>
+                <h3>Connect</h3>
+                             </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 <strong>News Portal</strong>. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        const d = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById("currentDate").innerText = d.toLocaleDateString('mr-IN', options);
+
+        
+        function toggleMobileMenu() {
+            document.getElementById("mainNavbar").classList.toggle("show-menu");
+        }
+
+        
+        function toggleDrawer() {
+            document.getElementById("appDrawer").style.left = "0";
+            document.querySelector(".side-drawer-overlay").style.display = "block";
+        }
+        function closeDrawer() {
+            document.getElementById("appDrawer").style.left = "-280px";
+            document.querySelector(".side-drawer-overlay").style.display = "none";
+        }
+        function goBack() {
+            closeDrawer();
+            if(window.history.length > 1) { window.history.back(); } 
+            else { window.location.href = 'index.html'; }
+        }
+
+        
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            if (!window.matchMedia('(display-mode: standalone)').matches) {
+                document.getElementById('install-app-card').style.display = 'block';
+            }
+        });
+
+        document.getElementById('installBtn').addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    document.getElementById('install-app-card').style.display = 'none';
+                }
+                deferredPrompt = null;
+            }
+        });
+
+        
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js');
+        }
+    </script>
+    
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'mr', includedLanguages: 'mr,hi,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
